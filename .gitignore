@@ -1,0 +1,63 @@
+<?php
+
+session_start();
+if ((isset($_SESSION['username_id'])) and (isset($_SESSION['level_id']))) {
+	$sess_id	= $_SESSION['username_id'];
+	$sess_level_id	= $_SESSION['level_id'];
+}
+
+if (isset($sess_id) and (isset($sess_level_id))){
+	echo "<meta http-equiv='refresh' content='0 url=base.php?module=home' />";
+}else{
+?>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sistem Informasi Jadwal - Universitas Negeri Yogyakarta</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
+<? include 'modul/login/login.js';?>
+</head>
+<body>
+<div id="loginpanelwrap">
+  	
+	<div class="loginheader">
+    <div class="logintitle"><a href="#">Sistem Informasi Jadwal</a><br/>
+    <a href="#">Universitas Negeri Yogyakarta</a></div>
+    </div>
+
+     
+    <div class="loginform">
+      <form id="loginform" action="#" method="post">
+	  <p class="info" align="center"></p>
+	  <p class="error" align="center"></p>
+		
+        <div class="loginform_row">
+        <label>Username:</label>
+        <input type="text" class="loginform_input" name="username" value="" />
+        </div>
+        <div class="loginform_row">
+        <label>Password:</label>
+        <input type="password" class="loginform_input" name="password" value="" />
+        </div>
+        <div class="loginform_row">
+        <input type="submit" class="loginform_submit" value="Login" />
+        </div>
+	   </form>
+        
+		<div class="loginfooter"><a href="#"></a></div>
+		<div class="clear"></div>
+    </div>
+ 
+
+</div>
+
+    	
+</body>
+</html>
+<?php
+}
+?>
